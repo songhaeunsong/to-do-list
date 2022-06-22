@@ -1,70 +1,153 @@
-# Getting Started with Create React App
+# Sequence 1th React Quest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. 개요
 
-## Available Scripts
+기본적인 react 개발 능력을 연습 또는 확인합니다.
 
-In the project directory, you can run:
+## 2. 과제
 
-### `npm start`
+아래의 `a.기획`, `b.요구사항(필수)` 그리고 `c.요구사항(선택)`을 잘 읽고 적절한 웹 프로그램을 구현해주시기 바랍니다. 리액트 사용은 필수이며, 이외의 라이브러리 사용은 제한이 없습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> 과제는 요구사항 선택을 포함하여 **10시간**을 목표로 작성되었습니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**과제는 해당 Repository를 fork하여 진행합니다.**
 
-### `npm test`
+# Sequence 1th React Quest
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 1. 개요
 
-### `npm run build`
+기본적인 react 개발 능력을 확인하고자 합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2. 과제
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+아래의 `a.기획`, `b.요구사항(필수)` 그리고 `c.요구사항(선택)`을 잘 읽고 적절한 웹 프로그램을 구현해주시기 바랍니다. 리액트 사용은 필수이며, 이외의 라이브러리 사용은 제한이 없습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> 과제는 요구사항 선택을 포함하여 **10시간**을 목표로 작성되었습니다.
 
-### `npm run eject`
+**과제는 해당 Repository를 fork하여 진행합니다.**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### a. 기획
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+할 일(Todo) 관리 프로그램(이하 "투두리스트")을 제작합니다. 투두리스트가 무엇인지 궁금하다면 [TodoMVC](https://todomvc.com/examples/react/#/)를 확인해주세요.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+투두리스트는 할 일을 등록하고 수정/삭제 할 수 있으며, 각 할 일에 태그를 등록하여 관리 할 수 있습니다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+투두리스트에서 관리해야하는 데이터는 아래와 같습니다.
 
-## Learn More
+- **할 일**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - 제목
+  - 상세설명
+  - 태그
+  - 생성일
+  - 수정일
+  - 마감목표일
+  - 완료일
+  - 완료여부
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **태그**
+  - 이름
+  - 글자 색상
+  - 배경 색상
+  - 생성일
 
-### Code Splitting
+### b. 요구사항(필수)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**할 일**
 
-### Analyzing the Bundle Size
+- [ ] 할 일 입력 폼에는 제목, 상세설명, 태그, 마감 목표일을 입력할 수 있습니다.
+- [ ] 마감 목표일은 달력 UI를 이용합니다.
+- [ ] 입력폼에서 "제출하기" 버튼을 누르면 목록에서 추가된 할 일을 확인할 수 있습니다.
+- [ ] 목록에서 바로 체크박스를 누르면 완료여부를 체크할 수 있습니다.
+- [ ] 목록에서 "수정" 버튼을 누르면 해당 투두를 수정 할 수 있습니다.
+- [ ] 목록에서 "삭제" 버튼을 누르면 삭제 됩니다.
+- [ ] 완료한 할 일 목록을 필터하여 볼 수 있습니다.
+- [ ] 완료한 할 일들은 일괄 삭제가 가능합니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**태그**
 
-### Making a Progressive Web App
+- [ ] 할 일 입력 폼에서 태그를 여러개 입력할 수 있습니다.
+- [ ] 같은 이름의 태그는 중복입력이 안됩니다.
+- [ ] 할 일 목록에서 태그는 색상으로 구분되어야 합니다.
+- [ ] 목록에서 서로 다른 할 일에 같은 태그가 있다면, 같은 색으로 표시됩니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### c. 요구사항(선택)
 
-### Advanced Configuration
+선택 요구 사항은 가산점 항목입니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [ ] 입력할 때 validation 처리.
+- [ ] 입력 중 뒤로가기 또는 브라우저를 닫으려고 할 때 입력된 내용 삭제 알림창.
+- [ ] 마감일이 3일 이내인 할 일은 긴급함 표시가 보입니다.
+- [ ] 태그의 색상을 커스텀하게 바꿀 수 있습니다.
+- [ ] 할 일 삭제시 진짜로 삭제할 것인지 한번 더 물어보고 삭제됩니다.
+- [ ] 할 일은 태그별, 완료여부별, 마감 기간, 생성일 기준으로 필터를 할 수 있습니다.
+- [ ] 브라우저창을 닫았다가 다시 열어도 데이터가 남아있습니다.
+- [ ] 서비스 배포가 되어 어디서든 접속이 가능할 수 있으면 좋겠어요. (배포 후 API 링크를 아래에 적어주세요) \
+       배포 URL:
 
-### Deployment
+## 3. 제출방법
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+fork를 한 뒤 진행하기 때문에 따로 제출은 필요 없으나, 마감일 기준 23:59:59 까지의 커밋까지만 인정됩니다.
 
-### `npm run build` fails to minify
+### a. 기획
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+할 일(Todo) 관리 프로그램(이하 "투두리스트")을 제작합니다. 투두리스트가 무엇인지 궁금하다면 [TodoMVC](https://todomvc.com/examples/react/#/)를 확인해주세요.
+
+투두리스트는 할 일을 등록하고 수정/삭제 할 수 있으며, 각 할 일에 태그를 등록하여 관리 할 수 있습니다.
+
+투두리스트에서 관리해야하는 데이터는 아래와 같습니다.
+
+- **할 일**
+
+  - 제목
+  - 상세설명
+  - 태그
+  - 생성일
+  - 수정일
+  - 마감목표일
+  - 완료일
+  - 완료여부
+
+- **태그**
+  - 이름
+  - 글자 색상
+  - 배경 색상
+  - 생성일
+
+### b. 요구사항(필수)
+
+**할 일**
+
+- [ ] 할 일 입력 폼에는 제목, 상세설명, 태그, 마감 목표일을 입력할 수 있습니다.
+- [ ] 마감 목표일은 달력 UI를 이용합니다.
+- [ ] 입력폼에서 "제출하기" 버튼을 누르면 목록에서 추가된 할 일을 확인할 수 있습니다.
+- [ ] 목록에서 바로 체크박스를 누르면 완료여부를 체크할 수 있습니다.
+- [ ] 목록에서 "수정" 버튼을 누르면 해당 투두를 수정 할 수 있습니다.
+- [ ] 목록에서 "삭제" 버튼을 누르면 삭제 됩니다.
+- [ ] 완료한 할 일 목록을 필터하여 볼 수 있습니다.
+- [ ] 완료한 할 일들은 일괄 삭제가 가능합니다.
+
+**태그**
+
+- [ ] 할 일 입력 폼에서 태그를 여러개 입력할 수 있습니다.
+- [ ] 같은 이름의 태그는 중복입력이 안됩니다.
+- [ ] 할 일 목록에서 태그는 색상으로 구분되어야 합니다.
+- [ ] 목록에서 서로 다른 할 일에 같은 태그가 있다면, 같은 색으로 표시됩니다.
+
+### c. 요구사항(선택)
+
+선택 요구 사항은 가산점 항목입니다.
+
+- [ ] 입력할 때 validation 처리.
+- [ ] 입력 중 뒤로가기 또는 브라우저를 닫으려고 할 때 입력된 내용 삭제 알림창.
+- [ ] 마감일이 3일 이내인 할 일은 긴급함 표시가 보입니다.
+- [ ] 태그의 색상을 커스텀하게 바꿀 수 있습니다.
+- [ ] 할 일 삭제시 진짜로 삭제할 것인지 한번 더 물어보고 삭제됩니다.
+- [ ] 할 일은 태그별, 완료여부별, 마감 기간, 생성일 기준으로 필터를 할 수 있습니다.
+- [ ] 브라우저창을 닫았다가 다시 열어도 데이터가 남아있습니다.
+- [ ] 서비스 배포가 되어 어디서든 접속이 가능할 수 있으면 좋겠어요. (배포 후 API 링크를 아래에 적어주세요) \
+       배포 URL:
+
+## 3. 제출방법
+
+fork를 한 뒤 진행하기 때문에 따로 제출은 필요 없으나, 마감일 기준 23:59:59 까지의 커밋까지만 인정됩니다.
