@@ -1,0 +1,64 @@
+.todo-insert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #5047ff;
+  border-radius: 10px;
+  padding: 10px;
+}
+input {
+  padding: 10px 20px;
+  border: 2px solid rgb(244, 244, 244);
+  border-radius: 10px;
+  outline: none;
+  margin: 7px;
+}
+
+.add-todo-btn {
+  padding: 0 5px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: gray;
+}
+.add-todo-btn:hover {
+  color: #5047ff;
+}
+.add-todo-btn svg {
+  padding-top: 3px;
+  font-size: 1.7rem;
+}
+.rewrite {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  background-color: aliceblue;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.rewrite svg {
+  color: #5047ff;
+  font-size: 1.8rem;
+  margin: 10px 30px -5px 30px;
+}
+p {
+  width: 4rem;
+  font-size: 10px;
+  font-weight: 900;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  color: #29247b;
+}
+#date {
+  font-size: 13px;
+  color: gray;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}

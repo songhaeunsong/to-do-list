@@ -1,13 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Template from "./components/Template";
+import ToDoList from "./components/ToDoList";
+import ToDoInsert from "./components/ToDoInsert";
 
 function App() {
+  let nextId = 1;
+  const [selectedTodo, setSelectedTodo] = useState(null);
+  const [todos, setTodos] = useState([]);
+
+  const onInsertTodo = (text, subtext, date) => {
+    if (text === "") {
+      return alert("제목을 입력해주세요!");
+    } else {
+      const todo = {
+        id: nextId,
+        text,
+        subtext,
+        date,
+        checked: false,
+      };
+      setTodos((todos) => todos.concat(todo));
+      nextId++;
+    }
+  };
+
+  const onCheckToggle = (id) => {
+    setTodos((todos) =>
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, checked: !todo.checked } : todo
+      )
+    );
+  };
+
+  const onChangeSelectedTodo = (todo) => {
+    setSelectedTodo(todo);
+  };
+
+  const onRemove = (id) => {
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
+    setSelectedTodo((selectedTodo) => !selectedTodo);
+  };
+
+  const onUpdate = (id, text, subtext, date) => {
+    setTodos((todos) =>
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, text, subtext, date } : todo
+      )
+    );
+    setSelectedTodo((selectedTodo) => !selectedTodo);
+  };
   return (
-    <div className='App'>
-      <h1>Sequence Makes Difference</h1>
-      <h1>과제 화이팅입니다.</h1>
-      <h2>제출 기한은 6월 23일 23:59</h2>
-    </div>
+    <Template>
+      <ToDoInsert
+        selectedTodo={selectedTodo}
+        onInsertTodo={onInsertTodo}
+        onRemove={onRemove}
+        onUpdate={onUpdate}
+      />
+      <ToDoList
+        todos={todos}
+        onCheckToggle={onCheckToggle}
+        onChangeSelectedTodo={onChangeSelectedTodo}
+      />
+    </Template>
   );
 }
 

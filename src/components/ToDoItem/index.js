@@ -1,0 +1,37 @@
+import React from "react";
+import { BsEmojiHeartEyes, BsCircle } from "react-icons/bs";
+import "./todoitem.css";
+
+const ToDoItem = ({ todo, onCheckToggle, onChangeSelectedTodo }) => {
+  const { id, text, subtext, date, checked } = todo;
+  return (
+    <div className="todo-item">
+      <div className={`content ${checked ? "checked" : ""}`}>
+        {checked ? (
+          <BsEmojiHeartEyes
+            onClick={() => {
+              onCheckToggle(id);
+            }}
+          />
+        ) : (
+          <BsCircle
+            onClick={() => {
+              onCheckToggle(id);
+            }}
+          />
+        )}
+        <div
+          className="text"
+          onClick={() => {
+            onChangeSelectedTodo(todo);
+          }}
+        >
+          <p className="list--text">{text}</p>
+          <p className="list--subtext">{subtext}</p>
+          <p className="list--date">{date}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default ToDoItem;

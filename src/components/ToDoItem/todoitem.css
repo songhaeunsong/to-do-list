@@ -1,0 +1,44 @@
+.todo-item {
+  padding: 1rem;
+  margin: 20px;
+  box-shadow: 3px 5px 10px 3px lightgray;
+  border-radius: 15px;
+}
+.content {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.content svg {
+  font-size: 2rem;
+  color: #5047ff;
+  margin: 0 40px;
+}
+.content .text {
+  margin-left: 2vw;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: black;
+}
+.content.checked .text {
+  text-decoration: line-through #5047ff;
+  opacity: 0.6;
+  margin-left: 2vw;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.list--text {
+  color: black;
+  font-size: 20px;
+  margin: 5px;
+}
+.list--subtext {
+  color: gray;
+  font-size: 15px;
+  margin: 5px;
+}
+.list--date {
+  color: #5047ff;
+  font-size: 10px;
+  margin: 5px;
+}

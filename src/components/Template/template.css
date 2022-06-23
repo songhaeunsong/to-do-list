@@ -1,0 +1,12 @@
+.template {
+  padding-top: 20px;
+  max-height: 100vh;
+}
+.title {
+  color: #5047ff;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 900;
+}
