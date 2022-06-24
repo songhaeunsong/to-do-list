@@ -10,6 +10,7 @@ form {
   justify-content: center;
   align-items: center;
   border: 2px solid #5047ff;
+  width: min(60vw, 250px);
   border-radius: 10px;
   padding: 10px;
 }
@@ -47,10 +48,10 @@ input {
 .rewrite svg {
   color: #5047ff;
   font-size: 1.8rem;
-  margin: 10px 30px -5px 30px;
+  margin: 7px 30px 7px 30px;
 }
-p {
-  width: 4rem;
+.dueD {
+  text-align: center;
   font-size: 10px;
   font-weight: 900;
   margin-left: 10px;
@@ -58,6 +59,7 @@ p {
   color: #29247b;
 }
 #date {
+  width: 90px;
   font-size: 13px;
   color: gray;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;

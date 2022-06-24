@@ -4,8 +4,9 @@ import Template from "./components/Template";
 import ToDoList from "./components/ToDoList";
 import ToDoInsert from "./components/ToDoInsert";
 
+let nextId = 1;
+
 function App() {
-  let nextId = 1;
   const [selectedTodo, setSelectedTodo] = useState(null);
   const [todos, setTodos] = useState([]);
 
@@ -22,6 +23,7 @@ function App() {
       };
       setTodos((todos) => todos.concat(todo));
       nextId++;
+      console.log(nextId);
     }
   };
 
@@ -39,7 +41,7 @@ function App() {
 
   const onRemove = (id) => {
     setTodos((todos) => todos.filter((todo) => todo.id !== id));
-    setSelectedTodo((selectedTodo) => !selectedTodo);
+    setSelectedTodo(null);
   };
 
   const onUpdate = (id, text, subtext, date) => {
@@ -48,7 +50,7 @@ function App() {
         todo.id === id ? { ...todo, text, subtext, date } : todo
       )
     );
-    setSelectedTodo((selectedTodo) => !selectedTodo);
+    setSelectedTodo(null);
   };
   return (
     <Template>

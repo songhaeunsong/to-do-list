@@ -49,25 +49,31 @@ const ToDoInsert = ({ onInsertTodo, selectedTodo, onRemove, onUpdate }) => {
             placeholder="수정사항을 입력하세요."
             value={text}
             onChange={textChange}
-          ></input>
+          />
           <input
             requiered
             placeholder="상세설명..."
             value={subtext}
             onChange={subtextChange}
-          ></input>
-          <p>마감 목표일</p>
+          />
+          <p className="dueD">마감 목표일</p>
           <input id="date" type="date" value={date} onChange={dateChange} />
 
           <div>
             <TiPencil
               onClick={() => {
                 onUpdate(selectedTodo.id, text, subtext, date);
+                setText("");
+                setSubtext("");
+                setDate("");
               }}
             />
             <TiTrash
               onClick={() => {
                 onRemove(selectedTodo.id);
+                setText("");
+                setSubtext("");
+                setDate("");
               }}
             />
           </div>
@@ -79,14 +85,14 @@ const ToDoInsert = ({ onInsertTodo, selectedTodo, onRemove, onUpdate }) => {
             placeholder="제목을 입력하세요."
             value={text}
             onChange={textChange}
-          ></input>
+          />
           <input
             requiered
             placeholder="상세설명..."
             value={subtext}
             onChange={subtextChange}
-          ></input>
-          <p>마감 목표일</p>
+          />
+          <p className="dueD">마감 목표일</p>
           <input id="date" type="date" value={date} onChange={dateChange} />
 
           <button className="add-todo-btn" type="submit">
