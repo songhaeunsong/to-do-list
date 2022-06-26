@@ -43,6 +43,9 @@ function App() {
     setTodos((todos) => todos.filter((todo) => todo.id !== id));
     setSelectedTodo(null);
   };
+  const onCheckedRemove = () => {
+    setTodos((todos) => todos.filter((todo) => todo.checked == false));
+  };
 
   const onUpdate = (id, text, subtext, date) => {
     setTodos((todos) =>
@@ -69,6 +72,18 @@ function App() {
         >
           {isCompleted ? `All` : `Completed`}
         </button>
+        {isCompleted ? (
+          <button
+            className="filter__completed-btn"
+            onClick={() => {
+              onCheckedRemove();
+            }}
+          >
+            완료된 일 일괄 삭제
+          </button>
+        ) : (
+          ``
+        )}
       </div>
       <ToDoList
         isCompleted={isCompleted}
