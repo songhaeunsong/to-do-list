@@ -22,7 +22,7 @@ function App() {
         date,
         checked: false,
       };
-      setTodos((todos) => todos.concat(todo));
+      setTodos([...todos, todo]);
       nextId++;
     }
   };
@@ -61,29 +61,21 @@ function App() {
         onRemove={onRemove}
         onUpdate={onUpdate}
       />
-      <form>
-        <button type="button" onClick={() => setIsCompleted(!isCompleted)}>
-          completed
+      <div className="filter">
+        <button
+          className="filter__completed-btn"
+          type="button"
+          onClick={() => setIsCompleted(!isCompleted)}
+        >
+          {isCompleted ? `All` : `Completed`}
         </button>
-      </form>
-      {isCompleted
-        ? todos.map(
-            (todo) =>
-              todo.checked && (
-                <ToDoList
-                  todos={todos}
-                  onCheckToggle={onCheckToggle}
-                  onChangeSelectedTodo={onChangeSelectedTodo}
-                />
-              )
-          )
-        : todos.map((todo) => (
-            <ToDoList
-              todos={todos}
-              onCheckToggle={onCheckToggle}
-              onChangeSelectedTodo={onChangeSelectedTodo}
-            />
-          ))}
+      </div>
+      <ToDoList
+        isCompleted={isCompleted}
+        todos={todos}
+        onCheckToggle={onCheckToggle}
+        onChangeSelectedTodo={onChangeSelectedTodo}
+      />
     </Template>
   );
 }
