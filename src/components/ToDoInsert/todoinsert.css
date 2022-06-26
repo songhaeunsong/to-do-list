@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 form {
   display: flex;
@@ -58,6 +58,29 @@ input {
   margin-bottom: 0px;
   color: #29247b;
 }
+
+.tag-btn {
+  padding: 4px 7px;
+  color: white;
+  background-color: rgb(167, 162, 180);
+  border: 0 solid #5047ff;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.7rem;
+  margin: 0.2rem 0 0.5rem 0;
+  cursor: pointer;
+}
+
+.tags {
+  font-size: 13px;
+}
+.tag-error {
+  text-align: center;
+  width: 99%;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
 #date {
   width: 90px;
   font-size: 13px;

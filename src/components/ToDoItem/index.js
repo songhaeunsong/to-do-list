@@ -3,7 +3,7 @@ import { BsEmojiHeartEyes, BsCircle } from "react-icons/bs";
 import "./todoitem.css";
 
 const ToDoItem = ({ todo, onCheckToggle, onChangeSelectedTodo }) => {
-  const { id, text, subtext, tag, date, checked } = todo;
+  const { id, text, subtext, tags, date, checked } = todo;
   return (
     <div className="todo-item">
       <div className={`content ${checked ? "checked" : ""}`}>
@@ -28,7 +28,7 @@ const ToDoItem = ({ todo, onCheckToggle, onChangeSelectedTodo }) => {
         >
           <p className="list--text">{text}</p>
           <p className="list--subtext">{subtext}</p>
-          <p className="list--subtext">{tag}</p>
+          <p className="list--subtext">{tags}</p>
           <p className="list--date">{date}</p>
         </div>
       </div>

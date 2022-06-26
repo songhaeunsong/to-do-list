@@ -11,7 +11,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [isCompleted, setIsCompleted] = useState(false);
 
-  const onInsertTodo = (text, subtext, tag, date) => {
+  const onInsertTodo = (text, subtext, tags, date) => {
     if (text === "") {
       return alert("제목을 입력해주세요!");
     } else {
@@ -19,7 +19,7 @@ function App() {
         id: nextId,
         text,
         subtext,
-        tag,
+        tags,
         date,
         checked: false,
       };
@@ -48,10 +48,10 @@ function App() {
     setTodos((todos) => todos.filter((todo) => todo.checked == false));
   };
 
-  const onUpdate = (id, text, subtext, tag, date) => {
+  const onUpdate = (id, text, subtext, tags, date) => {
     setTodos((todos) =>
       todos.map((todo) =>
-        todo.id === id ? { ...todo, text, subtext, tag, date } : todo
+        todo.id === id ? { ...todo, text, subtext, tags, date } : todo
       )
     );
     setSelectedTodo(null);
