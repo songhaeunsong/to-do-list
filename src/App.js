@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Template from "./components/Template";
 import ToDoList from "./components/ToDoList";
@@ -9,6 +9,7 @@ let nextId = 1;
 function App() {
   const [selectedTodo, setSelectedTodo] = useState(null);
   const [todos, setTodos] = useState([]);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   const onInsertTodo = (text, subtext, date) => {
     if (text === "") {
@@ -23,7 +24,6 @@ function App() {
       };
       setTodos((todos) => todos.concat(todo));
       nextId++;
-      console.log(nextId);
     }
   };
 
@@ -52,6 +52,7 @@ function App() {
     );
     setSelectedTodo(null);
   };
+
   return (
     <Template>
       <ToDoInsert
@@ -60,11 +61,29 @@ function App() {
         onRemove={onRemove}
         onUpdate={onUpdate}
       />
-      <ToDoList
-        todos={todos}
-        onCheckToggle={onCheckToggle}
-        onChangeSelectedTodo={onChangeSelectedTodo}
-      />
+      <form>
+        <button type="button" onClick={() => setIsCompleted(!isCompleted)}>
+          completed
+        </button>
+      </form>
+      {isCompleted
+        ? todos.map(
+            (todo) =>
+              todo.checked && (
+                <ToDoList
+                  todos={todos}
+                  onCheckToggle={onCheckToggle}
+                  onChangeSelectedTodo={onChangeSelectedTodo}
+                />
+              )
+          )
+        : todos.map((todo) => (
+            <ToDoList
+              todos={todos}
+              onCheckToggle={onCheckToggle}
+              onChangeSelectedTodo={onChangeSelectedTodo}
+            />
+          ))}
     </Template>
   );
 }
