@@ -6,6 +6,7 @@ import "./todoinsert.css";
 const ToDoInsert = ({ onInsertTodo, selectedTodo, onRemove, onUpdate }) => {
   const [text, setText] = useState("");
   const [subtext, setSubtext] = useState("");
+  const [tag, setTag] = useState("");
   const [date, setDate] = useState("");
 
   const textChange = (e) => {
@@ -15,15 +16,20 @@ const ToDoInsert = ({ onInsertTodo, selectedTodo, onRemove, onUpdate }) => {
     setSubtext(e.target.value);
   };
 
+  const tagChange = (e) => {
+    setTag(e.target.value);
+  };
+
   const dateChange = (e) => {
     setDate(e.target.value);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    onInsertTodo(text, subtext, date);
+    onInsertTodo(text, subtext, tag, date);
     setText("");
     setSubtext("");
+    setTag("");
     setDate("");
   };
 
@@ -31,6 +37,7 @@ const ToDoInsert = ({ onInsertTodo, selectedTodo, onRemove, onUpdate }) => {
     if (selectedTodo) {
       setText(selectedTodo.text);
       setSubtext(selectedTodo.subtext);
+      setTag(selectedTodo.subtext);
       setDate(selectedTodo.date);
     }
   }, [selectedTodo]);
@@ -41,7 +48,7 @@ const ToDoInsert = ({ onInsertTodo, selectedTodo, onRemove, onUpdate }) => {
         <form
           className="rewrite"
           onSubmit={() => {
-            onUpdate(selectedTodo.id, text, subtext, date);
+            onUpdate(selectedTodo.id, text, subtext, tag, date);
           }}
         >
           <input
@@ -62,7 +69,7 @@ const ToDoInsert = ({ onInsertTodo, selectedTodo, onRemove, onUpdate }) => {
           <div>
             <TiPencil
               onClick={() => {
-                onUpdate(selectedTodo.id, text, subtext, date);
+                onUpdate(selectedTodo.id, text, subtext, tag, date);
                 setText("");
                 setSubtext("");
                 setDate("");
@@ -92,6 +99,7 @@ const ToDoInsert = ({ onInsertTodo, selectedTodo, onRemove, onUpdate }) => {
             value={subtext}
             onChange={subtextChange}
           />
+          <input placeholder="태그" value={tag} onChange={tagChange} />
           <p className="dueD">마감 목표일</p>
           <input id="date" type="date" value={date} onChange={dateChange} />
 
